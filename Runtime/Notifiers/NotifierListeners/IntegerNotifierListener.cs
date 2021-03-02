@@ -5,7 +5,7 @@ namespace L32Utils.Notifiers
 {
     public class IntegerNotifierListener : MonoBehaviour, INotifierListener<int>
     {
-        public IntegerNotifier notifierEvent = null;
+        public IntegerNotifier notifier = null;
 
         [Space(10)]
         public UnityEvent<int> notifierEventResonse;
@@ -14,9 +14,12 @@ namespace L32Utils.Notifiers
             notifierEventResonse?.Invoke(value);
 
         void OnEnable() =>
-            notifierEvent.RegisterListener(this);
+            notifier.RegisterListener(this);
 
         void OnDisable() =>
-            notifierEvent.UnregisterListener(this);
+            notifier.UnregisterListener(this);
+
+        void OnDestroy() =>
+            notifier.UnregisterListener(this);
     }
 }

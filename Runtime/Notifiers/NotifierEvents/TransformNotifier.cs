@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace L32Utils.Notifiers
 {
-    [CreateAssetMenu(fileName = "New Transform Notifier", menuName = "Notifiers/Transform Notifier", order = 151)]
+    [CreateAssetMenu(fileName = "New Transform Notifier", menuName = "Notifiers/Transform Notifier", order = 171)]
     public class TransformNotifier : ScriptableObject, INotifier<Transform>
     {
         List<INotifierListener<Transform>> listeners = new List<INotifierListener<Transform>>();

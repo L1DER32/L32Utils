@@ -5,7 +5,7 @@ namespace L32Utils.Notifiers
 {
     public class FloatNotifierListener : MonoBehaviour, INotifierListener<float>
     {
-        public FloatNotifier notifierEvent = null;
+        public FloatNotifier notifier = null;
 
         [Space(10)]
         public UnityEvent<float> notifierEventResonse;
@@ -14,10 +14,13 @@ namespace L32Utils.Notifiers
             notifierEventResonse?.Invoke(value);
 
         void OnEnable() =>
-            notifierEvent.RegisterListener(this);
+            notifier.RegisterListener(this);
 
         void OnDisable() =>
-            notifierEvent.UnregisterListener(this);
+            notifier.UnregisterListener(this);
+
+        void OnDestroy() =>
+            notifier.UnregisterListener(this);
     }
 }
 

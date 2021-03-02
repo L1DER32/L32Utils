@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace L32Utils.Notifiers
 {
-    [CreateAssetMenu(fileName = "New Float Notifier", menuName = "Notifiers/Float Notifier", order = 151)]
+    [CreateAssetMenu(fileName = "New Float Notifier", menuName = "Notifiers/Float Notifier", order = 171)]
     public class FloatNotifier : ScriptableObject, INotifier<float>
     {
         List<INotifierListener<float>> listeners = new List<INotifierListener<float>>();

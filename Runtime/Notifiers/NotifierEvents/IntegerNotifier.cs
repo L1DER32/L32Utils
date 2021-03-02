@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace L32Utils.Notifiers
 {
-    [CreateAssetMenu(fileName = "New Integer Notifier", menuName = "Notifiers/Integer Notifier", order = 151)]
+    [CreateAssetMenu(fileName = "New Integer Notifier", menuName = "Notifiers/Integer Notifier", order = 171)]
     public class IntegerNotifier : ScriptableObject, INotifier<int>
     {
         List<INotifierListener<int>> listeners = new List<INotifierListener<int>>();

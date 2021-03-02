@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace L32Utils.Notifiers
 {
-    [CreateAssetMenu(fileName = "New String Notifier", menuName = "Notifiers/String Notifier", order = 151)]
+    [CreateAssetMenu(fileName = "New String Notifier", menuName = "Notifiers/String Notifier", order = 171)]
     public class StringNotifier : ScriptableObject
     {
         List<StringNotifierListener> listeners = new List<StringNotifierListener>();
