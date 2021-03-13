@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace L32Utils.Notifiers
@@ -8,10 +9,14 @@ namespace L32Utils.Notifiers
     {
         List<INotifierListener<float>> listeners = new List<INotifierListener<float>>();
 
+        public event Action<float> onNotified;
+
         public void InvokeNotifier(float value)
         {
             for (int i = listeners.Count - 1; i >= 0; i--)
                 listeners[i].OnNotified(value);
+
+            onNotified?.Invoke(value);
         }
 
         public void RegisterListener(INotifierListener<float> listener)

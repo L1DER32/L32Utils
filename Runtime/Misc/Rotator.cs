@@ -4,7 +4,7 @@ namespace L32Utils
 {
     public class Rotator : MonoBehaviour
     {
-        public Vector3 anglesPerSecond = Vector3.zero;
+        public Vector3 degreesPerSecond = Vector3.zero;
         public Space relativeSpace = Space.Self;
         public bool rotate = true;
 
@@ -14,13 +14,13 @@ namespace L32Utils
         void Update()
         {
             if (!preferLateUpdate && rotate)
-                transform.Rotate(anglesPerSecond * Time.deltaTime, relativeSpace);
+                transform.Rotate(degreesPerSecond * Time.deltaTime, relativeSpace);
         }
 
         private void LateUpdate()
         {
             if (preferLateUpdate && rotate)
-                transform.Rotate(anglesPerSecond * Time.deltaTime, relativeSpace);
+                transform.Rotate(degreesPerSecond * Time.deltaTime, relativeSpace);
         }
     }
 }
